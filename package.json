@@ -1,0 +1,51 @@
+{
+  "name": "react-director",
+  "version": "0.0.1",
+  "description": "router for react base on director.js",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register --recursive",
+    "test:watch": "npm test -- --watch",
+    "build:lib": "babel src --out-dir lib",
+    "build:umd": "webpack src/index.js dist/react-director.js --config webpack.config.development.js",
+    "build:umd:min": "webpack src/index.js dist/react-director.min.js --config webpack.config.production.js",
+    "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucifier129/react-director.git"
+  },
+  "keywords": [
+    "react",
+    "director",
+    "router"
+  ],
+  "author": "Jade Gu <guyingjie129@163.com> (https://github.com/Lucifier129)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lucifier129/react-director/issues"
+  },
+  "homepage": "https://github.com/Lucifier129/react-director",
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.25",
+    "webpack": "^1.12.2"
+  },
+  "npmName": "react-director",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
+  "dependencies": {
+    "director": "^1.2.8",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  }
+}
