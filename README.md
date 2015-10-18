@@ -1,2 +1,7 @@
 # react-director
-router for react base on director.js
+es2016-base router for react on decorator style
+
+## run examples
+```shell
+npm install && webpack
+```
